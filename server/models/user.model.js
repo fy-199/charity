@@ -24,6 +24,9 @@ const UserSchema = new Schema({
       "The Field `{PATH}` must be less than {MAXLENGTH} characters",
     ],
   },
+  company: {
+    type: String,
+  },
   username: {
     type: String,
     lowercase: true,
@@ -44,6 +47,9 @@ const UserSchema = new Schema({
     required: [true, "can't be blank"],
     match: [/\S+@\S+\.\S+/, "is invalid"],
     index: true,
+  },
+  phone: {
+    type: Number,
   },
   adress: {
     type: String,

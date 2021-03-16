@@ -12,6 +12,7 @@ const UserSchema = new Schema({
       30,
       "The Field `{PATH}` must be less than {MAXLENGTH} characters",
     ],
+    required: true,
   },
   lastname: {
     type: String,
@@ -23,6 +24,7 @@ const UserSchema = new Schema({
       30,
       "The Field `{PATH}` must be less than {MAXLENGTH} characters",
     ],
+    required: true,
   },
   company: {
     type: String,
@@ -57,7 +59,7 @@ const UserSchema = new Schema({
   last_login: { type: Date, default: Date.now },
   last_ip: { type: String },
   is_active: { type: Boolean },
-  role_id: { type: Schema.Types.ObjectId },
+  role: { type: String, default: "User" },
 });
 UserSchema.method("toJSON", function () {
   const { __v, _id, ...object } = this.toObject();

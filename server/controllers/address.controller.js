@@ -3,7 +3,7 @@ const User = require("../models/user.model");
 
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.firstname) {
+  if (!req.body.address_name) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
   }
@@ -21,15 +21,18 @@ exports.create = (req, res) => {
   });
   // Save Address in the database
   address
-    .save(user)
+    .save(address)
     .then((data) => {
-      const id = req.params.id;
+      const id = req.body.id;
+      console.log(id);
       User.findByIdAndUpdate(
         id,
         { $set: { address: data.id } },
-        { useFindAndModify: false }
+        { useFindAndModify: false, new: true }
       )
         .then((data) => {
+          console.log(data);
+          res.send(data);
           if (!data) {
             res.status(404).send({
               message: `Cannot update Address with id=${id}. Address was not found!`,
@@ -41,7 +44,6 @@ exports.create = (req, res) => {
             message: "Error updating Address with id=" + id,
           });
         });
-      res.send(data);
     })
     .catch((err) => {
       res.status(500).send({

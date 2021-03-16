@@ -27,7 +27,6 @@ const AddressSchema = new Schema({
     type: String,
   },
   updated_at: { type: Date, default: Date.now },
-  user_id: { type: Schema.Types.ObjectId },
 });
 AddressSchema.method("toJSON", function () {
   const { __v, _id, ...object } = this.toObject();

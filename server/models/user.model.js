@@ -53,9 +53,7 @@ const UserSchema = new Schema({
   phone: {
     type: Number,
   },
-  adress: {
-    type: String,
-  },
+  adress: { type: Schema.Types.ObjectId },
   last_login: { type: Date, default: Date.now },
   last_ip: { type: String },
   is_active: { type: Boolean },

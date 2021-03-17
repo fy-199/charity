@@ -29,10 +29,8 @@ const DonationSchema = new Schema({
   email: {
     type: String,
     lowercase: true,
-    unique: true,
     required: [true, "can't be blank"],
     match: [/\S+@\S+\.\S+/, "is invalid"],
-    index: true,
   },
   amount: {
     type: Number,
@@ -47,6 +45,7 @@ const DonationSchema = new Schema({
   payment_method: {
     type: String,
   },
+  user_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   created_at: { type: Date, default: Date.now },
 });
 DonationSchema.method("toJSON", function () {

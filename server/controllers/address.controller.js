@@ -24,14 +24,12 @@ exports.create = (req, res) => {
     .save(address)
     .then((data) => {
       const id = req.body.id;
-      console.log(id);
       User.findByIdAndUpdate(
         id,
         { $set: { address: data.id } },
         { useFindAndModify: false, new: true }
       )
         .then((data) => {
-          console.log(data);
           res.send(data);
           if (!data) {
             res.status(404).send({

@@ -1,4 +1,4 @@
-const User = require("../models/user.model");
+const Donation = require("../models/donation.model");
 
 exports.create = (req, res) => {
   // Validate request
@@ -7,28 +7,26 @@ exports.create = (req, res) => {
     return;
   }
   // Create a Collection
-  const user = new User({
+  const donation = new Donation({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     email: req.body.email,
-    username: req.body.username,
-    password: req.body.password,
-    company: req.body.company || null,
-    address: req.body.address || null,
-    donation: req.body.donation || null,
-    phone: req.body.phone || null,
-    is_active: req.body.is_active,
-    role: req.body.role || "User",
+    amount: req.body.amount,
+    message: req.body.message,
+    donate_type: req.body.donate_type,
+    payment_method: req.body.payment_method,
+    user_id: req.body.user_id || null,
   });
-  // Save Customer in the database
-  user
-    .save(user)
+  // Save Donation in the database
+  donation
+    .save(donation)
     .then((data) => {
       res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
-        message: err.message || "Some error occurred while creating the User.",
+        message:
+          err.message || "Some error occurred while creating the Address.",
       });
     });
 };
@@ -39,13 +37,14 @@ exports.findAll = (req, res) => {
     ? { name: { $regex: new RegExp(storeLocation), $options: "i" } }
     : {};
 
-  User.find(condition)
+  Donation.find(condition)
     .then((data) => {
       res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
-        message: err.message || "Some error occurred while retrieving users.",
+        message:
+          err.message || "Some error occurred while retrieving donations.",
       });
     });
 };
@@ -53,14 +52,21 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  User.findById(id)
+  Donation.aggregate([
+    {
+      $lookup: {
+        from: "users",
+        localField: "user_id",
+        foreignField: "_id",
+        as: "users",
+      },
+    },
+  ])
     .then((data) => {
-      if (!data)
-        res.status(404).send({ message: "Not found User with id " + id });
-      else res.send(data);
+      res.json(data);
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error retrieving User with id=" + id });
+      res.json(err);
     });
 };
 
@@ -71,17 +77,17 @@ exports.update = (req, res) => {
     });
   }
   const id = req.params.id;
-  User.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+  Donation.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot update User with id=${id}. User was not found!`,
+          message: `Cannot update Donation with id=${id}. Donation was not found!`,
         });
-      } else res.send({ message: " User was updated successfully." });
+      } else res.send({ message: " Donation was updated successfully." });
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Error updating User with id=" + id,
+        message: "Error updating Donation with id=" + id,
       });
     });
 };
@@ -89,31 +95,34 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  User.findByIdAndRemove(id)
+  Donation.findByIdAndRemove(id)
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot delete User with id=${id}. User was not found!`,
+          message: `Cannot delete Donation with id=${id}. Donation was not found!`,
         });
       } else {
-        res.send({ message: " User was deleted successfully!" });
+        res.send({ message: " Donation was deleted successfully!" });
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Could not delete User with id=" + id });
+      res
+        .status(500)
+        .send({ message: "Could not delete Donation with id=" + id });
     });
 };
 
 exports.deleteAll = (req, res) => {
-  User.deleteMany({})
+  Donation.deleteMany({})
     .then((data) => {
       res.send({
-        message: `${data.deletedCount} Users were deleted successfully!`,
+        message: `${data.deletedCount} Donations were deleted successfully!`,
       });
     })
     .catch((err) => {
       res.status(500).send({
-        message: err.message || "Some error occurred while removing all users.",
+        message:
+          err.message || "Some error occurred while removing all donations.",
       });
     });
 };

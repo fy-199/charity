@@ -20,26 +20,25 @@ exports.create = (req, res) => {
     .save(media)
     .then((data) => {
       res.send(data);
-      //PENDING FOR POST MODEL
-      // const id = req.body.id;
-      // Post.findByIdAndUpdate(
-      //   id,
-      //   { $set: { media: data.id } },
-      //   { useFindAndModify: false, new: true }
-      // )
-      //   .then((data) => {
-      //     res.send(data);
-      //     if (!data) {
-      //       res.status(404).send({
-      //         message: `Cannot update Media with id=${id}. Media was not found!`,
-      //       });
-      //     } else res.send({ message: " Media was updated successfully." });
-      //   })
-      //   .catch((err) => {
-      //     res.status(500).send({
-      //       message: "Error updating Media with id=" + id,
-      //     });
-      //   });
+      const id = req.body.id;
+      Post.findByIdAndUpdate(
+        id,
+        { $set: { media: data.id } },
+        { useFindAndModify: false, new: true }
+      )
+        .then((data) => {
+          res.send(data);
+          if (!data) {
+            res.status(404).send({
+              message: `Cannot update Media with id=${id}. Media was not found!`,
+            });
+          } else res.send({ message: " Media was updated successfully." });
+        })
+        .catch((err) => {
+          res.status(500).send({
+            message: "Error updating Media with id=" + id,
+          });
+        });
     })
     .catch((err) => {
       res.status(500).send({

@@ -13,7 +13,7 @@ exports.create = (req, res) => {
     title: req.body.title || null,
     is_delete: req.body.is_delete || null,
     media_type: req.body.media_type || null,
-    created_at: req.body.created_at || null,
+    created_at: req.body.created_at,
   });
   // Save Media in the database
   media

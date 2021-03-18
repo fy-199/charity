@@ -8,6 +8,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/user.routes");
 var addressesRouter = require("./routes/address.routes");
 var donationsRouter = require("./routes/donation.routes");
+var mediasRouter = require("./routes/media.routes");
 
 var app = express();
 //db connect
@@ -27,6 +28,7 @@ app.use("/", indexRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/addresses", addressesRouter);
 app.use("/api/donations", donationsRouter);
+app.use("/api/medias", mediasRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

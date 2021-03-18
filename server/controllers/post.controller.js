@@ -56,10 +56,10 @@ exports.findOne = (req, res) => {
   Post.aggregate([
     {
       $lookup: {
-        from: "users",
-        localField: "user_id",
-        foreignField: "_id",
-        as: "users",
+        from: "media",
+        localField: "media_id",
+        foreignField: "media",
+        as: "medias",
       },
     },
   ])

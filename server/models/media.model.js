@@ -14,7 +14,6 @@ const MediaSchema = new Schema({
   media_type: {
     type: String,
   },
-  post_id: { type: Schema.Types.ObjectId },
   created_at: { type: Date, default: Date.now },
 });
 MediaSchema.method("toJSON", function () {

@@ -26,12 +26,12 @@ const DonationSchema = new Schema({
     ],
     required: true,
   },
-  email: {
-    type: String,
-    lowercase: true,
-    required: [true, "can't be blank"],
-    match: [/\S+@\S+\.\S+/, "is invalid"],
-  },
+  // email: {
+  //   type: String,
+  //   lowercase: true,
+  //   required: [true, "can't be blank"],
+  //   match: [/\S+@\S+\.\S+/, "is invalid"],
+  // },
   amount: {
     type: Number,
     required: true,

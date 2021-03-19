@@ -53,6 +53,23 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
+  User.aggregate([
+    {
+      $lookup: {
+        from: "addresses",
+        localField: "address",
+        foreignField: "_id",
+        as: "address",
+      },
+    },
+  ])
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+
   User.findById(id)
     .then((data) => {
       if (!data)

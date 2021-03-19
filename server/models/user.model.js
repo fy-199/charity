@@ -57,7 +57,7 @@ const UserSchema = new Schema({
   last_login: { type: Date, default: Date.now },
   last_ip: { type: String },
   is_active: { type: Boolean },
-  role: { type: String, default: "User" },
+  role: { type: String, default: "User", ref: "RoleSchema" },
 });
 UserSchema.method("toJSON", function () {
   const { __v, _id, ...object } = this.toObject();

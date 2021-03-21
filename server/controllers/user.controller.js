@@ -1,4 +1,5 @@
 const User = require("../models/user.model");
+const mongoose = require("mongoose");
 
 exports.create = (req, res) => {
   // Validate request
@@ -14,7 +15,6 @@ exports.create = (req, res) => {
     username: req.body.username,
     password: req.body.password,
     company: req.body.company || null,
-    address: req.body.address || null,
     donation: req.body.donation || null,
     phone: req.body.phone || null,
     is_active: req.body.is_active,
@@ -52,15 +52,9 @@ exports.findAll = (req, res) => {
 
 exports.findOne = (req, res) => {
   const id = req.params.id;
-
   User.aggregate([
     {
-      $lookup: {
-        from: "addresses",
-        localField: "address",
-        foreignField: "_id",
-        as: "address",
-      },
+      $match: { _id: mongoose.Types.ObjectId(id) },
     },
   ])
     .then((data) => {
@@ -68,16 +62,6 @@ exports.findOne = (req, res) => {
     })
     .catch((err) => {
       res.json(err);
-    });
-
-  User.findById(id)
-    .then((data) => {
-      if (!data)
-        res.status(404).send({ message: "Not found User with id " + id });
-      else res.send(data);
-    })
-    .catch((err) => {
-      res.status(500).send({ message: "Error retrieving User with id=" + id });
     });
 };
 

@@ -1,4 +1,5 @@
 const Donation = require("../models/donation.model");
+const mongoose = require("mongoose");
 
 exports.create = (req, res) => {
   // Validate request
@@ -53,6 +54,9 @@ exports.findOne = (req, res) => {
   const id = req.params.id;
 
   Donation.aggregate([
+    {
+      $match: { user_id: mongoose.Types.ObjectId(id) },
+    },
     {
       $lookup: {
         from: "users",

@@ -26,6 +26,7 @@ const AddressSchema = new Schema({
   address_2: {
     type: String,
   },
+  user_id: { type: mongoose.Schema.Types.ObjectId },
   updated_at: { type: Date, default: Date.now },
 });
 AddressSchema.method("toJSON", function () {

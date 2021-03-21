@@ -1,6 +1,9 @@
 const User = require("../models/user.model");
 const mongoose = require("mongoose");
 
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.firstname) {
@@ -8,29 +11,33 @@ exports.create = (req, res) => {
     return;
   }
   // Create a Collection
-  const user = new User({
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    email: req.body.email,
-    username: req.body.username,
-    password: req.body.password,
-    company: req.body.company || null,
-    donation: req.body.donation || null,
-    phone: req.body.phone || null,
-    is_active: req.body.is_active,
-    role: req.body.role || "User",
-  });
-  // Save Customer in the database
-  user
-    .save(user)
-    .then((data) => {
-      res.send(data);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message: err.message || "Some error occurred while creating the User.",
-      });
+  const { password } = req.body;
+  bcrypt.hash(password, 10).then(function (hash) {
+    const user = new User({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      username: req.body.username,
+      password: hash,
+      company: req.body.company || null,
+      donation: req.body.donation || null,
+      phone: req.body.phone || null,
+      is_active: req.body.is_active,
+      role: req.body.role || "User",
     });
+    // Save Customer in the database
+    user
+      .save(user)
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while creating the User.",
+        });
+      });
+  });
 };
 
 exports.findAll = (req, res) => {
@@ -51,14 +58,28 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  const id = req.params.id;
-  User.aggregate([
-    {
-      $match: { _id: mongoose.Types.ObjectId(id) },
-    },
-  ])
-    .then((data) => {
-      res.json(data);
+  const { username, password } = req.body;
+  User.findOne({ username })
+    .then((resultUser) => {
+      if (!resultUser) {
+        res.end("The user was not found.");
+      } else {
+        bcrypt.compare(password, resultUser.password).then((resultCompare) => {
+          console.log(resultCompare);
+          if (!resultCompare) {
+            res.end("Authentication failed, wrong password...");
+          } else {
+            const payload = { username };
+            //JWT
+            const token = jwt.sign(payload, req.app.get("api_secret_key"), {
+              expiresIn: 60000,
+            }); //1hour;
+            res.json({ status: true, token });
+            res.end("JWT Create Token");
+          }
+        });
+      }
+      //res.json(resultUser)
     })
     .catch((err) => {
       res.json(err);

@@ -7,10 +7,10 @@ Mr Rowshen is working remote in our project
 <table style="width: 0.0pt;border-collapse:collapse;border: none;">
     <tbody>
         <tr>
-            <td style="width: 14.966%; border-top: 1pt solid rgb(91, 155, 213); border-bottom: 1pt solid rgb(91, 155, 213); border-left: 1pt solid rgb(91, 155, 213); border-image: initial; border-right: none; background: rgb(91, 155, 213); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 18.5886%; border-top: 1pt solid rgb(91, 155, 213); border-bottom: 1pt solid rgb(91, 155, 213); border-left: 1pt solid rgb(91, 155, 213); border-image: initial; border-right: none; background: rgb(91, 155, 213); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;text-align:center;'><strong>Route</strong></p>
             </td>
-            <td style="width: 9.6599%; border-top: 1pt solid rgb(91, 155, 213); border-left: none; border-bottom: 1pt solid rgb(91, 155, 213); border-right: none; background: rgb(91, 155, 213); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 13.5973%; border-top: 1pt solid rgb(91, 155, 213); border-left: none; border-bottom: 1pt solid rgb(91, 155, 213); border-right: none; background: rgb(91, 155, 213); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong>Method</strong></p>
             </td>
             <td style="width: 30.7815%; border-top: 1pt solid rgb(91, 155, 213); border-left: none; border-bottom: 1pt solid rgb(91, 155, 213); border-right: none; background: rgb(91, 155, 213); padding: 0in 5.4pt; vertical-align: top;">
@@ -21,10 +21,10 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 14.966%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
-                <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong><span style="color:red;">/api/users</span></strong></p>
+            <td style="width: 18.5886%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
+                <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong><span style="color:red;">/api/users &nbsp; &nbsp; &nbsp;</span></strong></p>
             </td>
-            <td style="width: 9.6599%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 13.5973%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>GET</p>
             </td>
             <td style="width: 30.7815%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
@@ -35,10 +35,10 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 14.966%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 18.5886%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong><span style="color:  red;">/api/users</span></strong></p>
             </td>
-            <td style="width: 9.6599%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 13.5973%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>POST</p>
             </td>
             <td style="width: 30.7815%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
@@ -51,10 +51,10 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 14.966%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 18.5886%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong><span style="color:red;">/api/users/:id</span></strong></p>
             </td>
-            <td style="width: 9.6599%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 13.5973%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>GET</p>
             </td>
             <td style="width: 30.7815%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
@@ -65,10 +65,10 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 14.966%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 18.5886%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong><span style="color:  red;">/api/users/:id</span></strong></p>
             </td>
-            <td style="width: 9.6599%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 13.5973%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>PUT</p>
             </td>
             <td style="width: 30.7815%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
@@ -80,10 +80,10 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 14.966%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 18.5886%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong><span style="color:red;">/api/users/:id</span></strong></p>
             </td>
-            <td style="width: 9.6599%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 13.5973%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>DELETE</p>
             </td>
             <td style="width: 30.7815%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
@@ -94,10 +94,10 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 14.966%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 18.5886%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong><span style="color:  red;">/api/users/</span></strong></p>
             </td>
-            <td style="width: 9.6599%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 13.5973%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><span style="color:red;">DELETE</span></p>
             </td>
             <td style="width: 30.7815%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
@@ -113,10 +113,10 @@ Mr Rowshen is working remote in our project
 <table style="width: 0.0pt;border-collapse:collapse;border: none;">
     <tbody>
         <tr>
-            <td style="width: 112.25pt;border-top: 1pt solid rgb(91, 155, 213);border-bottom: 1pt solid rgb(91, 155, 213);border-left: 1pt solid rgb(91, 155, 213);border-image: initial;border-right: none;background: rgb(91, 155, 213);padding: 0in 5.4pt;vertical-align: top;">
+            <td style="width: 18.2444%; border-top: 1pt solid rgb(91, 155, 213); border-bottom: 1pt solid rgb(91, 155, 213); border-left: 1pt solid rgb(91, 155, 213); border-image: initial; border-right: none; background: rgb(91, 155, 213); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;text-align:center;'><strong>Route</strong></p>
             </td>
-            <td style="width: 15.1463%; border-top: 1pt solid rgb(91, 155, 213); border-left: none; border-bottom: 1pt solid rgb(91, 155, 213); border-right: none; background: rgb(91, 155, 213); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 12.7367%; border-top: 1pt solid rgb(91, 155, 213); border-left: none; border-bottom: 1pt solid rgb(91, 155, 213); border-right: none; background: rgb(91, 155, 213); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong>Method</strong></p>
             </td>
             <td style="width: 31.3253%; border-top: 1pt solid rgb(91, 155, 213); border-left: none; border-bottom: 1pt solid rgb(91, 155, 213); border-right: none; background: rgb(91, 155, 213); padding: 0in 5.4pt; vertical-align: top;">
@@ -127,10 +127,10 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 112.25pt;border-right: 1pt solid rgb(156, 194, 229);border-bottom: 1pt solid rgb(156, 194, 229);border-left: 1pt solid rgb(156, 194, 229);border-image: initial;border-top: none;background: rgb(222, 234, 246);padding: 0in 5.4pt;vertical-align: top;">
+            <td style="width: 18.2444%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong>/api/address</strong></p>
             </td>
-            <td style="width: 15.1463%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 12.7367%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>GET</p>
             </td>
             <td style="width: 31.3253%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
@@ -141,11 +141,11 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 112.25pt;border-right: 1pt solid rgb(156, 194, 229);border-bottom: 1pt solid rgb(156, 194, 229);border-left: 1pt solid rgb(156, 194, 229);border-image: initial;border-top: none;padding: 0in 5.4pt;height: 8.75pt;vertical-align: top;">
+            <td style="width: 18.2444%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; padding: 0in 5.4pt; height: 8.75pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong>/api/address</strong></p>
             </td>
-            <td style="width: 15.1463%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; height: 8.75pt; vertical-align: top;">
-                <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>POST</p>
+            <td style="width: 12.7367%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; height: 8.75pt; vertical-align: top;">
+                <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>POST &nbsp; &nbsp;&nbsp;</p>
             </td>
             <td style="width: 31.3253%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; height: 8.75pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;line-height:13.5pt;background:#FFFFFE;'><span style='font-size:12px;font-family:"Courier New";color:black;'>{</span><br><span style='font-size:12px;font-family:"Courier New";color:#A31515;'>&quot;address_name&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>:</span><span style='font-size:12px;font-family:"Courier New";color:#0451A5;'>&quot;ev&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>,</span><br><span style='font-size:12px;font-family:"Courier New";color:#A31515;'>&quot;address_title&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>:</span><span style='font-size:12px;font-family:"Courier New";color:#0451A5;'>&quot;Evim&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>,</span><br><span style='font-size:12px;font-family:"Courier New";color:#A31515;'>&quot;country&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>:</span><span style='font-size:12px;font-family:"Courier New";color:#0451A5;'>&quot;Turkey&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>,</span><br><span style='font-size:12px;font-family:"Courier New";color:#A31515;'>&quot;city&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>:</span><span style='font-size:12px;font-family:"Courier New";color:#0451A5;'>&quot;Manisa&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>,</span><br><span style='font-size:12px;font-family:"Courier New";color:#A31515;'>&quot;state&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>:</span><span style='font-size:12px;font-family:"Courier New";color:#0451A5;'>&quot;Turgutlu&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>,</span><br><span style='font-size:12px;font-family:"Courier New";color:#A31515;'>&quot;post_code&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>:</span><span style='font-size:12px;font-family:"Courier New";color:#0451A5;'>&quot;45310&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>,</span><br><span style='font-size:12px;font-family:"Courier New";color:#A31515;'>&quot;id&quot;</span><span style='font-size:12px;font-family:"Courier New";color:black;'>:</span><br><span style='font-size:12px;font-family:"Courier New";color:#0451A5;'>&quot;</span><span style='font-size: 9px; font-family: "Courier New"; color: rgb(4, 81, 165);'>6053704974905c049a25c9de</span><span style='font-size:12px;font-family:"Courier New";color:#0451A5;'>&quot;</span><br><span style='font-size:12px;font-family:"Courier New";color:black;'>}</span></p>
@@ -155,10 +155,10 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 112.25pt;border-right: 1pt solid rgb(156, 194, 229);border-bottom: 1pt solid rgb(156, 194, 229);border-left: 1pt solid rgb(156, 194, 229);border-image: initial;border-top: none;background: rgb(222, 234, 246);padding: 0in 5.4pt;vertical-align: top;">
+            <td style="width: 18.2444%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong>/api/ address /:id</strong></p>
             </td>
-            <td style="width: 15.1463%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 12.7367%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>GET</p>
             </td>
             <td style="width: 31.3253%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
@@ -174,10 +174,10 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 112.25pt;border-right: 1pt solid rgb(156, 194, 229);border-bottom: 1pt solid rgb(156, 194, 229);border-left: 1pt solid rgb(156, 194, 229);border-image: initial;border-top: none;padding: 0in 5.4pt;height: 11.6pt;vertical-align: top;">
+            <td style="width: 18.2444%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; padding: 0in 5.4pt; height: 11.6pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong>/api/ address /:id</strong></p>
             </td>
-            <td style="width: 15.1463%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; height: 11.6pt; vertical-align: top;">
+            <td style="width: 12.7367%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; height: 11.6pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>PUT</p>
             </td>
             <td style="width: 31.3253%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; height: 11.6pt; vertical-align: top;">
@@ -188,10 +188,10 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 112.25pt;border-right: 1pt solid rgb(156, 194, 229);border-bottom: 1pt solid rgb(156, 194, 229);border-left: 1pt solid rgb(156, 194, 229);border-image: initial;border-top: none;background: rgb(222, 234, 246);padding: 0in 5.4pt;vertical-align: top;">
+            <td style="width: 18.2444%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong>/api/ address /:id</strong></p>
             </td>
-            <td style="width: 15.1463%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 12.7367%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>DELETE</p>
             </td>
             <td style="width: 31.3253%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
@@ -202,11 +202,11 @@ Mr Rowshen is working remote in our project
             </td>
         </tr>
         <tr>
-            <td style="width: 112.25pt;border-right: 1pt solid rgb(156, 194, 229);border-bottom: 1pt solid rgb(156, 194, 229);border-left: 1pt solid rgb(156, 194, 229);border-image: initial;border-top: none;padding: 0in 5.4pt;vertical-align: top;">
+            <td style="width: 18.2444%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong>/api/ address /:id</strong></p>
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong>/</strong></p>
             </td>
-            <td style="width: 15.1463%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
+            <td style="width: 12.7367%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>GET</p>
             </td>
             <td style="width: 31.3253%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); padding: 0in 5.4pt; vertical-align: top;">
@@ -238,13 +238,13 @@ Mr Rowshen is working remote in our project
         </tr>
         <tr>
             <td style="width: 18.0723%; border-right: 1pt solid rgb(156, 194, 229); border-bottom: 1pt solid rgb(156, 194, 229); border-left: 1pt solid rgb(156, 194, 229); border-image: initial; border-top: none; background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
-                <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong>/register</strong></p>
+                <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'><strong>/register &nbsp; &nbsp; &nbsp; &nbsp;</strong></p>
             </td>
             <td style="width: 13.9415%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
-                <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>POST</p>
+                <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>POST &nbsp; &nbsp; &nbsp;</p>
             </td>
             <td style="width: 45.2668%; border-top: none; border-left: none; border-bottom: 1pt solid rgb(156, 194, 229); border-right: 1pt solid rgb(156, 194, 229); background: rgb(222, 234, 246); padding: 0in 5.4pt; vertical-align: top;">
-                <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>{ username: &apos;foo&apos;, password:&apos;1234&apos; }</p>
+                <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>{ username: &apos;foo&apos;, password:&apos;1234&apos; } &nbsp;&nbsp;</p>
             </td>
             <td style="width: 98.95pt;border-top: none;border-left: none;border-bottom: 1pt solid rgb(156, 194, 229);border-right: 1pt solid rgb(156, 194, 229);background: rgb(222, 234, 246);padding: 0in 5.4pt;vertical-align: top;">
                 <p style='margin:0in;margin-bottom:.0001pt;font-size:16px;font-family:"Times New Roman",serif;'>Create a new user.</p>

@@ -1,26 +1,27 @@
-const Donation = require("../models/donation.model");
-const mongoose = require("mongoose");
+const Post = require("../models/post.model");
 
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.firstname) {
+  if (!req.body.title) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
   }
   // Create a Collection
-  const donation = new Donation({
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    email: req.body.email,
-    amount: req.body.amount,
-    message: req.body.message,
-    donate_type: req.body.donate_type,
-    payment_method: req.body.payment_method,
+  const post = new Post({
+    post_img_id: req.body.post_img_id,
+    donatee_img_id: req.body.donatee_img_id,
+    donatee_desc: req.body.donatee_desc,
+    donatee_name: req.body.donatee_name,
+    title: req.body.title,
+    summary: req.body.summary,
+    content: req.body.content,
+    media: req.body.media,
     user_id: req.body.user_id || null,
+    post_type: req.body.post_type,
   });
-  // Save Donation in the database
-  donation
-    .save(donation)
+  // Save Post in the database
+  post
+    .save(post)
     .then((data) => {
       res.send(data);
     })
@@ -38,14 +39,13 @@ exports.findAll = (req, res) => {
     ? { name: { $regex: new RegExp(storeLocation), $options: "i" } }
     : {};
 
-  Donation.find(condition)
+  Post.find(condition)
     .then((data) => {
       res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving donations.",
+        message: err.message || "Some error occurred while retrieving posts.",
       });
     });
 };
@@ -53,16 +53,13 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Donation.aggregate([
-    {
-      $match: { user_id: mongoose.Types.ObjectId(id) },
-    },
+  Post.aggregate([
     {
       $lookup: {
-        from: "users",
-        localField: "user_id",
-        foreignField: "_id",
-        as: "users",
+        from: "media",
+        localField: "media_id",
+        foreignField: "media",
+        as: "medias",
       },
     },
   ])
@@ -81,17 +78,17 @@ exports.update = (req, res) => {
     });
   }
   const id = req.params.id;
-  Donation.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+  Post.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot update Donation with id=${id}. Donation was not found!`,
+          message: `Cannot update Post with id=${id}. Post was not found!`,
         });
-      } else res.send({ message: " Donation was updated successfully." });
+      } else res.send({ message: " Post was updated successfully." });
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Error updating Donation with id=" + id,
+        message: "Error updating Post with id=" + id,
       });
     });
 };
@@ -99,34 +96,31 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  Donation.findByIdAndRemove(id)
+  Post.findByIdAndRemove(id)
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot delete Donation with id=${id}. Donation was not found!`,
+          message: `Cannot delete Post with id=${id}. Post was not found!`,
         });
       } else {
-        res.send({ message: " Donation was deleted successfully!" });
+        res.send({ message: " Post was deleted successfully!" });
       }
     })
     .catch((err) => {
-      res
-        .status(500)
-        .send({ message: "Could not delete Donation with id=" + id });
+      res.status(500).send({ message: "Could not delete Post with id=" + id });
     });
 };
 
 exports.deleteAll = (req, res) => {
-  Donation.deleteMany({})
+  Post.deleteMany({})
     .then((data) => {
       res.send({
-        message: `${data.deletedCount} Donations were deleted successfully!`,
+        message: `${data.deletedCount} Posts were deleted successfully!`,
       });
     })
     .catch((err) => {
       res.status(500).send({
-        message:
-          err.message || "Some error occurred while removing all donations.",
+        message: err.message || "Some error occurred while removing all posts.",
       });
     });
 };

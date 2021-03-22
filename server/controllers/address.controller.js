@@ -1,5 +1,6 @@
 const Address = require("../models/address.model");
 const User = require("../models/user.model");
+const mongoose = require("mongoose");
 
 exports.create = (req, res) => {
   // Validate request
@@ -17,31 +18,14 @@ exports.create = (req, res) => {
     post_code: req.body.post_code || null,
     address_1: req.body.address_1 || null,
     address_2: req.body.address_2 || null,
-    updated_at: req.body.updated_at || null,
+    updated_at: req.body.updated_at,
+    user_id: req.body.user_id || null,
   });
   // Save Address in the database
   address
     .save(address)
     .then((data) => {
-      const id = req.body.id;
-      User.findByIdAndUpdate(
-        id,
-        { $set: { address: data.id } },
-        { useFindAndModify: false, new: true }
-      )
-        .then((data) => {
-          res.send(data);
-          if (!data) {
-            res.status(404).send({
-              message: `Cannot update Address with id=${id}. Address was not found!`,
-            });
-          } else res.send({ message: " Address was updated successfully." });
-        })
-        .catch((err) => {
-          res.status(500).send({
-            message: "Error updating Address with id=" + id,
-          });
-        });
+      res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
@@ -72,16 +56,21 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Address.findById(id)
+  Address.aggregate([
+    {
+      $lookup: {
+        from: "users",
+        localField: "user_id",
+        foreignField: "_id",
+        as: "user's information",
+      },
+    },
+  ])
     .then((data) => {
-      if (!data)
-        res.status(404).send({ message: "Not found Address with id " + id });
-      else res.send(data);
+      res.json(data);
     })
     .catch((err) => {
-      res
-        .status(500)
-        .send({ message: "Error retrieving Address with id=" + id });
+      res.json(err);
     });
 };
 

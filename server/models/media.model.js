@@ -23,6 +23,3 @@ MediaSchema.method("toJSON", function () {
 });
 
 module.exports = mongoose.model("media", MediaSchema);
-
- 
-

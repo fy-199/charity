@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.address_name) {
+  if (!req.body.title) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
   }
@@ -56,7 +56,7 @@ exports.findOne = (req, res) => {
   Involvement.aggregate([
     {
       $lookup: {
-        from: "medias",
+        from: "media",
         localField: "media_id",
         foreignField: "_id",
         as: "media",

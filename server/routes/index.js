@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
 
 /* GET home page. */
+
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
@@ -37,6 +38,11 @@ router.post("/authenticate", (req, res) => {
     .catch((err) => {
       res.json(err);
     });
+
+//hello from enesh2
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+
 });
 
 module.exports = router;

@@ -1,32 +1,32 @@
 const InvolvementReq = require("../models/involvement-req.model");
-const User = require("../models/user.model");
 const mongoose = require("mongoose");
 
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.address_name) {
+  if (!req.body.is_active) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
   }
   // Create a Collection
-  const address = new Address({
+  const involvementReq = new InvolvementReq({
     user_id: req.body.user_id || null,
-    involvement_id: req.body.address_name || null,
+    involvement_id: req.body.involvement_id || null,
     is_active: req.body.is_active || null,
     is_delete: req.body.is_delete || null,
     updated_at: req.body.updated_at,
     updated_user_id: req.body.user_id || null,
   });
   // Save Address in the database
-  address
-    .save(address)
+  involvementReq
+    .save(involvementReq)
     .then((data) => {
       res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Address.",
+          err.message ||
+          "Some error occurred while creating the InvolvementReq.",
       });
     });
 };
@@ -37,7 +37,7 @@ exports.findAll = (req, res) => {
     ? { name: { $regex: new RegExp(storeLocation), $options: "i" } }
     : {};
 
-  Address.find(condition)
+  InvolvementReq.find(condition)
     .then((data) => {
       res.send(data);
     })
@@ -52,7 +52,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Address.aggregate([
+  InvolvementReq.aggregate([
     {
       $lookup: {
         from: "users",
@@ -77,17 +77,17 @@ exports.update = (req, res) => {
     });
   }
   const id = req.params.id;
-  Address.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+  InvolvementReq.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot update Address with id=${id}. Address was not found!`,
+          message: `Cannot update InvolvementReq with id=${id}. InvolvementReq was not found!`,
         });
-      } else res.send({ message: " Address was updated successfully." });
+      } else res.send({ message: " InvolvementReq was updated successfully." });
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Error updating Address with id=" + id,
+        message: "Error updating InvolvementReq with id=" + id,
       });
     });
 };
@@ -95,34 +95,35 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  Address.findByIdAndRemove(id)
+  InvolvementReq.findByIdAndRemove(id)
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot delete Address with id=${id}. Address was not found!`,
+          message: `Cannot delete InvolvementReq with id=${id}. InvolvementReq was not found!`,
         });
       } else {
-        res.send({ message: " Address was deleted successfully!" });
+        res.send({ message: " InvolvementReq was deleted successfully!" });
       }
     })
     .catch((err) => {
       res
         .status(500)
-        .send({ message: "Could not delete Address with id=" + id });
+        .send({ message: "Could not delete InvolvementReq with id=" + id });
     });
 };
 
 exports.deleteAll = (req, res) => {
-  Address.deleteMany({})
+  InvolvementReq.deleteMany({})
     .then((data) => {
       res.send({
-        message: `${data.deletedCount} Addresses were deleted successfully!`,
+        message: `${data.deletedCount} InvolvementReq were deleted successfully!`,
       });
     })
     .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all addresses.",
+          err.message ||
+          "Some error occurred while removing all involvementReq.",
       });
     });
 };

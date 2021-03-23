@@ -11,6 +11,7 @@ var donationsRouter = require("./routes/donation.routes");
 var mediasRouter = require("./routes/media.routes");
 var postsRouter = require("./routes/post.routes");
 var involvementsRouter = require("./routes/involvement.routes");
+var involvementsReqRouter = require("./routes/involvement-req.routes");
 
 var app = express();
 //db connect
@@ -38,6 +39,7 @@ app.use("/api/donations", donationsRouter);
 app.use("/api/medias", mediasRouter);
 app.use("/api/posts", postsRouter);
 app.use("/api/involvements", involvementsRouter);
+app.use("/api/involvements-req", involvementsReqRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

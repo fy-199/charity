@@ -1,42 +1,49 @@
-const User = require("../models/user.model");
+const config = require("../config/auth.config");
+const db = require("../models");
+const User = db.user;
+const Role = db.role;
 const mongoose = require("mongoose");
+const roles = require("../controllers/role.controller");
 
-const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
 exports.create = (req, res) => {
-  // Validate request
-  if (!req.body.firstname) {
-    res.status(400).send({ message: "Content can not be empty!" });
-    return;
-  }
   // Create a Collection
-  const { password } = req.body;
-  bcrypt.hash(password, 10).then(function (hash) {
-    const user = new User({
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      email: req.body.email,
-      username: req.body.username,
-      password: hash,
-      company: req.body.company || null,
-      donation: req.body.donation || null,
-      phone: req.body.phone || null,
-      is_active: req.body.is_active,
-      role: req.body.role || "User",
-    });
-    // Save Customer in the database
-    user
-      .save(user)
-      .then((data) => {
-        res.send(data);
-      })
-      .catch((err) => {
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while creating the User.",
-        });
+  const user = new User({
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    email: req.body.email,
+    username: req.body.username,
+    password: bcrypt.hashSync(req.body.password, 8),
+    company: req.body.company || null,
+    donation: req.body.donation || null,
+    phone: req.body.phone || null,
+    is_active: req.body.is_active,
+  });
+  // Save Customer in the database
+  user.save((err, user) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    }
+
+    Role.findOne({ name: "user" }, (err, role) => {
+      if (err) {
+        res.status(500).send({ message: err });
+        return;
+      }
+
+      user.roles = [role._id];
+      user.save((err) => {
+        if (err) {
+          res.status(500).send({ message: err });
+          return;
+        }
+
+        res.send({ message: "User was registered successfully!" });
       });
+    });
   });
 };
 
@@ -138,4 +145,19 @@ exports.deleteAll = (req, res) => {
         message: err.message || "Some error occurred while removing all users.",
       });
     });
+};
+exports.allAccess = (req, res) => {
+  res.status(200).send("Public Content.");
+};
+
+exports.userBoard = (req, res) => {
+  res.status(200).send("User Content.");
+};
+
+exports.adminBoard = (req, res) => {
+  res.status(200).send("Admin Content.");
+};
+
+exports.moderatorBoard = (req, res) => {
+  res.status(200).send("Moderator Content.");
 };

@@ -3,8 +3,10 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var bd = require("./models");
+var Role = bd.role;
 
-var indexRouter = require("./routes/index");
+var indexRouter = require("./routes/auth.routes");
 var usersRouter = require("./routes/user.routes");
 var addressesRouter = require("./routes/address.routes");
 var donationsRouter = require("./routes/donation.routes");
@@ -17,7 +19,7 @@ var app = express();
 //db connect
 const db = require("./helpers/db")();
 
-const verifyToken = require("./middlewares/verify-token");
+const { verifyToken } = require("./middlewares");
 const config = require("./config");
 app.set("api_secret_key", config.api_secret_key);
 
@@ -32,7 +34,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/api", verifyToken);
+app.use("/api", verifyToken.verifyToken);
 app.use("/api/users", usersRouter);
 app.use("/api/addresses", addressesRouter);
 app.use("/api/donations", donationsRouter);

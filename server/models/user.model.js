@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const User = new Schema({
   firstname: {
     type: String,
     minlength: [
@@ -56,12 +56,17 @@ const UserSchema = new Schema({
   last_login: { type: Date, default: Date.now },
   last_ip: { type: String },
   is_active: { type: Boolean },
-  role: { type: String, default: "User" },
+  roles: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Role",
+    },
+  ],
 });
-UserSchema.method("toJSON", function () {
+User.method("toJSON", function () {
   const { __v, _id, ...object } = this.toObject();
   object.id = _id;
   return object;
 });
 
-module.exports = mongoose.model("user", UserSchema);
+module.exports = mongoose.model("user", User);

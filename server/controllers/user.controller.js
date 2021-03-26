@@ -20,6 +20,7 @@ exports.create = (req, res) => {
     donation: req.body.donation || null,
     phone: req.body.phone || null,
     is_active: req.body.is_active,
+    is_delete: req.body.is_delete || false,
   });
   // Save Customer in the database
   user.save((err, user) => {
@@ -41,7 +42,7 @@ exports.create = (req, res) => {
           return;
         }
 
-        res.send({ message: "User was registered successfully!" });
+        res.send({ message: `User was registered successfully!` });
       });
     });
   });

@@ -16,6 +16,11 @@
     "mongoose": "^5.12.0",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.7",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "swagger-jsdoc": "^7.0.0-rc.6",
+    "swagger-tools": "^0.10.4",
+    "swagger-ui-express": "^4.1.6",
+    "validator": "^12.2.0",
+    "yamljs": "^0.3.0"
   }
 }

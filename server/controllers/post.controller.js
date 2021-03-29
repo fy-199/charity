@@ -18,6 +18,7 @@ exports.create = (req, res) => {
     media: req.body.media,
     user_id: req.body.user_id || null,
     post_type: req.body.post_type,
+    is_delete: req.body.is_delete || false,
   });
   // Save Post in the database
   post

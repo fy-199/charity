@@ -56,6 +56,7 @@ const User = new Schema({
   last_login: { type: Date, default: Date.now },
   last_ip: { type: String },
   is_active: { type: Boolean },
+  is_delete: { type: Boolean },
   roles: [
     {
       type: mongoose.Schema.Types.ObjectId,

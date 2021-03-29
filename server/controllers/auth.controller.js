@@ -37,17 +37,17 @@ exports.signin = (req, res) => {
         expiresIn: 86400, // 24 hours
       });
       /*Kontrol amaciyla kapatilmistir. */
-      // var authorities = [];
+      var authorities = [];
 
-      // for (let i = 0; i < user.roles.length; i++) {
-      //   authorities.push("ROLE_" + user.roles[i].name.toUpperCase());
-      // }
-      // res.status(200).send({
-      //   id: user._id,
-      //   username: user.username,
-      //   email: user.email,
-      //   roles: authorities,
-      //   accessToken: token,
-      // });
+      for (let i = 0; i < user.roles.length; i++) {
+        authorities.push("ROLE_" + user.roles[i].name.toUpperCase());
+      }
+      res.status(200).send({
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        roles: authorities,
+        accessToken: token,
+      });
     });
 };

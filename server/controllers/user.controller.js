@@ -148,7 +148,7 @@ exports.deleteAll = (req, res) => {
     });
 };
 exports.allAccess = (req, res) => {
-  res.status(200).send("Public Content.");
+  res.render("index");
 };
 
 exports.userBoard = (req, res) => {

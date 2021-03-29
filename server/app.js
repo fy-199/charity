@@ -3,8 +3,6 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var bd = require("./models");
-var Role = bd.role;
 
 var indexRouter = require("./routes/auth.routes");
 var usersRouter = require("./routes/user.routes");
@@ -22,6 +20,7 @@ const db = require("./helpers/db")();
 const { verifyToken } = require("./middlewares");
 const config = require("./config");
 app.set("api_secret_key", config.api_secret_key);
+// swagger
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -39,7 +38,7 @@ app.use("/api/users", usersRouter);
 app.use("/api/addresses", addressesRouter);
 app.use("/api/donations", donationsRouter);
 app.use("/api/medias", mediasRouter);
-app.use("/api/posts", postsRouter);
+app.use("/posts", postsRouter);
 app.use("/api/involvements", involvementsRouter);
 app.use("/api/involvements-req", involvementsReqRouter);
 

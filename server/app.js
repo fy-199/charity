@@ -42,13 +42,13 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors(corsOptions));
 app.use("/", indexRouter);
 app.use("/api", verifyToken.verifyToken);
-app.use("/api/users", usersRouter);
-app.use("/api/addresses", addressesRouter);
-app.use("/api/donations", donationsRouter);
-app.use("/api/medias", mediasRouter);
+app.use("/users", usersRouter);
+app.use("/addresses", addressesRouter);
+app.use("/donations", donationsRouter);
+app.use("/medias", mediasRouter);
 app.use("/posts", postsRouter);
-app.use("/api/involvements", involvementsRouter);
-app.use("/api/involvements-req", involvementsReqRouter);
+app.use("/involvements", involvementsRouter);
+app.use("/involvements-req", involvementsReqRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

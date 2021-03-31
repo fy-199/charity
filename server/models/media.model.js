@@ -8,7 +8,7 @@ const MediaSchema = new Schema({
   title: {
     type: String,
   },
-  is_delete: {
+  is_deleted: {
     type: Boolean,
   },
   media_type: {

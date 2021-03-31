@@ -18,7 +18,7 @@ exports.create = (req, res) => {
     media: req.body.media,
     user_id: req.body.user_id || null,
     post_type: req.body.post_type,
-    is_delete: req.body.is_delete || false,
+    is_deleted: req.body.is_deleted || false,
   });
   // Save Post in the database
   post
@@ -80,6 +80,32 @@ exports.update = (req, res) => {
   }
   const id = req.params.id;
   Post.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot update Post with id=${id}. Post was not found!`,
+        });
+      } else res.send({ message: " Post was updated successfully." });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Error updating Post with id=" + id,
+      });
+    });
+};
+
+exports.updateDelete = (req, res) => {
+  if (!req.body) {
+    return res.status(400).send({
+      message: "Data to update can not be empty!",
+    });
+  }
+  const id = req.params.id;
+  Post.findByIdAndUpdate(
+    id,
+    { $set: { is_deleted: true } },
+    { useFindAndModify: false }
+  )
     .then((data) => {
       if (!data) {
         res.status(404).send({

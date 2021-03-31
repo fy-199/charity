@@ -3,6 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+const cors = require("cors");
 
 var indexRouter = require("./routes/auth.routes");
 var usersRouter = require("./routes/user.routes");
@@ -20,7 +21,13 @@ const db = require("./helpers/db")();
 const { verifyToken } = require("./middlewares");
 const config = require("./config");
 app.set("api_secret_key", config.api_secret_key);
-// swagger
+
+// cors
+let corsOptions = {
+  origin: process.env.ORIGIN || "http://localhost:3000", //This is for frontend
+  // credentials: true,
+  // optionsSuccessStatus: 200, // For legacy browser support
+};
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -32,6 +39,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(cors(corsOptions));
 app.use("/", indexRouter);
 app.use("/api", verifyToken.verifyToken);
 app.use("/api/users", usersRouter);
@@ -46,7 +54,15 @@ app.use("/api/involvements-req", involvementsReqRouter);
 app.use(function (req, res, next) {
   next(createError(404));
 });
-
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development

@@ -5,6 +5,7 @@ router.post("/", posts.create); // Create a new Collection
 router.get("/", posts.findAll); // Retrieve all Collections
 router.get("/:id", posts.findOne); // Retrieve a single Collection with id
 router.put("/:id", posts.update); // Update a Collection with id
+router.put("/delete/:id", posts.updateDelete); // Update a Collection with id
 router.delete("/:id", posts.delete); // Delete a Collection with id
 router.delete("/", posts.deleteAll); // Delete all Collections
 

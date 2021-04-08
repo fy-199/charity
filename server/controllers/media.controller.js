@@ -11,7 +11,7 @@ exports.create = (req, res) => {
   const media = new Media({
     media_url: req.body.media_url || null,
     title: req.body.title || null,
-    is_delete: req.body.is_delete || null,
+    is_delete: req.body.is_delete || false,
     media_type: req.body.media_type || null,
     created_at: req.body.created_at,
   });
@@ -23,7 +23,12 @@ exports.create = (req, res) => {
       const id = req.body.id;
       Post.findByIdAndUpdate(
         id,
-        { $set: { media: data.id } },
+        {
+          $set: {
+            post_img_url: data.media_post_id,
+            post_donate_url: data.media_donate_id,
+          },
+        },
         { useFindAndModify: false, new: true }
       )
         .then((data) => {

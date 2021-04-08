@@ -58,9 +58,9 @@ exports.findOne = (req, res) => {
     {
       $lookup: {
         from: "media",
-        localField: "media_id",
-        foreignField: "media",
-        as: "medias",
+        localField: "media_post_id",
+        foreignField: "post_img_id",
+        as: "post_img_id",
       },
     },
   ])

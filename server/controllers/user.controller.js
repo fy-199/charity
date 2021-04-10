@@ -53,10 +53,25 @@ exports.findAll = (req, res) => {
   let condition = name
     ? { name: { $regex: new RegExp(storeLocation), $options: "i" } }
     : {};
-
   User.find(condition)
     .then((data) => {
-      res.send(data);
+      // res.send(data);
+      User.aggregate([
+        {
+          $lookup: {
+            from: "roles",
+            localField: "roles",
+            foreignField: "_id",
+            as: "role",
+          },
+        },
+      ])
+        .then((data) => {
+          res.json(data);
+        })
+        .catch((err) => {
+          res.json(err);
+        });
     })
     .catch((err) => {
       res.status(500).send({

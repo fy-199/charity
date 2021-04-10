@@ -11,7 +11,7 @@ exports.create = (req, res) => {
   const media = new Media({
     media_url: req.body.media_url || null,
     title: req.body.title || null,
-    is_delete: req.body.is_delete || false,
+    is_deleted: req.body.is_deleted || false,
     media_type: req.body.media_type || null,
     created_at: req.body.created_at,
   });

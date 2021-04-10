@@ -40,7 +40,7 @@ const User = new Schema({
   password: {
     type: String /* require regex */,
     minlength: 5,
-    required: true,
+    // required: true,
   },
   email: {
     type: String,

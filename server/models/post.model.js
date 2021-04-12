@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
-  post_img_id: {
+  post_img_url: {
     type: String,
   },
-  donatee_img_id: {
+  donatee_img_url: {
     type: String,
   },
   donatee_desc: {
@@ -25,7 +25,6 @@ const PostSchema = new Schema({
   },
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now },
-  media: { type: Schema.Types.ObjectId },
   user_id: { type: Schema.Types.ObjectId },
   post_type: {
     type: Boolean,

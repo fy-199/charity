@@ -8,14 +8,15 @@ exports.create = (req, res) => {
   }
   // Create a Collection
   const post = new Post({
-    post_img_id: req.body.post_img_id,
-    donatee_img_id: req.body.donatee_img_id,
+    post_img_url: req.body.post_img_url,
+    donatee_img_url: req.body.donatee_img_url,
     donatee_desc: req.body.donatee_desc,
     donatee_name: req.body.donatee_name,
     title: req.body.title,
     summary: req.body.summary,
     content: req.body.content,
-    media: req.body.media,
+    created_at: req.body.created_at,
+    updated_at: req.body.updated_at,
     user_id: req.body.user_id || null,
     post_type: req.body.post_type,
     is_deleted: req.body.is_deleted || false,
@@ -58,8 +59,8 @@ exports.findOne = (req, res) => {
     {
       $lookup: {
         from: "media",
-        localField: "media_post_id",
-        foreignField: "post_img_id",
+        localField: "_id",
+        foreignField: "post_donatee_img_id",
         as: "post_img_id",
       },
     },

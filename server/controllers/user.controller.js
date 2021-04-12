@@ -3,10 +3,10 @@ const db = require("../models");
 const User = db.user;
 const Role = db.role;
 const mongoose = require("mongoose");
-const roles = require("../controllers/role.controller");
 
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const { ROLES } = require("../models");
 
 exports.create = (req, res) => {
   // Create a Collection
@@ -21,8 +21,10 @@ exports.create = (req, res) => {
     phone: req.body.phone || null,
     is_active: req.body.is_active,
     is_deleted: req.body.is_deleted || false,
+    created_at: req.body.created_at,
+    updated_at: req.body.updated_at,
   });
-  // Save Customer in the database
+  // Save User in the database
   user.save((err, user) => {
     if (err) {
       res.status(500).send({ message: err });

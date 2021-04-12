@@ -40,7 +40,7 @@ const User = new Schema({
   password: {
     type: String /* require regex */,
     minlength: 5,
-    // required: true,
+    required: true,
   },
   email: {
     type: String,
@@ -57,6 +57,8 @@ const User = new Schema({
   last_ip: { type: String },
   is_active: { type: Boolean },
   is_deleted: { type: Boolean },
+  created_at: { type: Date, default: Date.now },
+  updated_at: { type: Date, default: Date.now },
   roles: [
     {
       type: mongoose.Schema.Types.ObjectId,

@@ -8,7 +8,7 @@ const InvolvementSchema = new Schema({
   description: {
     type: String,
   },
-  is_delete: {
+  is_deleted: {
     type: Boolean,
   },
   is_active: {

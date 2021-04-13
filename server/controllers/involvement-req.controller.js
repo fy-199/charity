@@ -37,7 +37,7 @@ exports.findAll = (req, res) => {
     ? { name: { $regex: new RegExp(storeLocation), $options: "i" } }
     : {};
 
-  InvolvementReq.find(condition)
+  InvolvementReq.find({ is_deleted: false })
     .then((data) => {
       res.send(data);
     })
@@ -52,16 +52,20 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  InvolvementReq.aggregate([
-    {
-      $lookup: {
-        from: "users",
-        localField: "user_id",
-        foreignField: "_id",
-        as: "user's information",
-      },
-    },
-  ])
+  InvolvementReq.findById(id)
+    .then((data) => {
+      res.send(data);
+      InvolvementReq.aggregate([
+        {
+          $lookup: {
+            from: "users",
+            localField: "user_id",
+            foreignField: "_id",
+            as: "user's information",
+          },
+        },
+      ]);
+    })
     .then((data) => {
       res.json(data);
     })

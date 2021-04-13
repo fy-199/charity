@@ -41,7 +41,7 @@ exports.findAll = (req, res) => {
     ? { name: { $regex: new RegExp(storeLocation), $options: "i" } }
     : {};
 
-  Post.find(condition)
+  Post.find({ is_deleted: false })
     .then((data) => {
       res.send(data);
     })
@@ -58,11 +58,11 @@ exports.findOne = (req, res) => {
   Post.findById(id)
     .then((data) => {
       if (!data)
-        res.status(404).send({ message: "Not found Staff with id " + id });
+        res.status(404).send({ message: "Not found Post with id " + id });
       else res.send(data);
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error retrieving Staff with id=" + id });
+      res.status(500).send({ message: "Error retrieving Post with id=" + id });
     });
 };
 

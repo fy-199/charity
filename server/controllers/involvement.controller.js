@@ -12,7 +12,7 @@ exports.create = (req, res) => {
   const involvement = new Involvement({
     title: req.body.title,
     description: req.body.description || null,
-    is_delete: req.body.is_delete || null,
+    is_deleted: req.body.is_deleted || null,
     is_active: req.body.is_active || null,
     type: req.body.type,
     media_id: req.body.media_id || null,
@@ -38,7 +38,7 @@ exports.findAll = (req, res) => {
     ? { name: { $regex: new RegExp(storeLocation), $options: "i" } }
     : {};
 
-  Involvement.find(condition)
+  Involvement.find({ is_deleted: false })
     .then((data) => {
       res.send(data);
     })
@@ -53,21 +53,18 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Involvement.aggregate([
-    {
-      $lookup: {
-        from: "media",
-        localField: "media_id",
-        foreignField: "_id",
-        as: "media",
-      },
-    },
-  ])
+  Involvement.findById(id)
     .then((data) => {
-      res.json(data);
+      if (!data)
+        res
+          .status(404)
+          .send({ message: "Not found Involvement with id " + id });
+      else res.send(data);
     })
     .catch((err) => {
-      res.json(err);
+      res
+        .status(500)
+        .send({ message: "Error retrieving Involvement with id=" + id });
     });
 };
 

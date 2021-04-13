@@ -55,21 +55,14 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Post.aggregate([
-    {
-      $lookup: {
-        from: "media",
-        localField: "_id",
-        foreignField: "post_donatee_img_id",
-        as: "post_img_id",
-      },
-    },
-  ])
+  Post.findById(id)
     .then((data) => {
-      res.json(data);
+      if (!data)
+        res.status(404).send({ message: "Not found Staff with id " + id });
+      else res.send(data);
     })
     .catch((err) => {
-      res.json(err);
+      res.status(500).send({ message: "Error retrieving Staff with id=" + id });
     });
 };
 

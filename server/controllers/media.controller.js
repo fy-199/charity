@@ -10,10 +10,10 @@ exports.create = (req, res) => {
   // Create a Collection
   const media = new Media({
     media_url: req.body.media_url || null,
-    title: req.body.title || null,
-    is_deleted: req.body.is_deleted || false,
-    media_type: req.body.media_type || null,
     created_at: req.body.created_at,
+    is_deleted: req.body.is_deleted || false,
+    title: req.body.title || null,
+    media_type: req.body.media_type || null,
   });
   // Save Media in the database
   media

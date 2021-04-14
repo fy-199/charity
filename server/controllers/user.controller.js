@@ -77,7 +77,7 @@ exports.findOne = (req, res) => {
         bcrypt.compare(password, resultUser.password).then((resultCompare) => {
           console.log(resultCompare);
           if (!resultCompare) {
-            res.end("Authentication failed, wrong password...");
+            res.send("Authentication failed, wrong password...");
           } else {
             const payload = { username };
             //JWT
@@ -85,14 +85,28 @@ exports.findOne = (req, res) => {
               expiresIn: 60000,
             }); //1hour;
             res.json({ status: true, token });
-            res.end("JWT Create Token");
+            // res.send("JWT Create Token");
           }
         });
       }
-      //res.json(resultUser)
+      // res.send(resultUser);
     })
     .catch((err) => {
       res.json(err);
+    });
+};
+
+exports.findOneUser = (req, res) => {
+  const id = req.params.id;
+
+  User.findById(id)
+    .then((data) => {
+      if (!data)
+        res.status(404).send({ message: "Not found User with id " + id });
+      else res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({ message: "Error retrieving User with id=" + id });
     });
 };
 

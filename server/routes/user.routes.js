@@ -3,6 +3,7 @@ let router = require("express").Router();
 const { verifyToken } = require("../middlewares");
 
 // router.post("/", users.create); // Create a new User
+router.get("/info/:id", users.findOneUser); // Retrieve a single User with id
 router.get("/:id", users.findOne); // Retrieve a single User with id
 router.get("/", users.findAll); // Retrieve all Users
 router.put("/:id", users.update); // Update a User with id

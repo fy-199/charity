@@ -8,6 +8,13 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { ROLES } = require("../models");
 
+const getPagination = (page, size) => {
+  const limit = size ? +size : 10;
+  const offset = page ? page * limit : 0;
+
+  return { limit, offset };
+};
+
 exports.create = (req, res) => {
   // Create a Collection
   const user = new User({
@@ -51,12 +58,14 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-  const name = req.query.name;
-  let condition = name
-    ? { name: { $regex: new RegExp(storeLocation), $options: "i" } }
+  const { page, size, title } = req.query;
+  var condition = title
+    ? { title: { $regex: new RegExp(title), $options: "i" } }
     : {};
-  User.find({ is_deleted: false })
-    .populate("roles")
+
+  const { limit, offset } = getPagination(page, size);
+  User.paginate({ is_deleted: false }, { populate: "roles" }, { offset, limit })
+    // .populate("roles")
     .then((data) => {
       res.send(data);
     })

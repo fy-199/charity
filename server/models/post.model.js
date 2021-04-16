@@ -20,7 +20,22 @@ const PostSchema = new Schema({
   summary: {
     type: String,
   },
-  content: {
+  content_1: {
+    type: String,
+  },
+  content_2: {
+    type: String,
+  },
+  content_3: {
+    type: String,
+  },
+  content_4: {
+    type: String,
+  },
+  content_img_1: {
+    type: String,
+  },
+  content_img_2: {
     type: String,
   },
   created_at: { type: Date, default: Date.now },

@@ -3,6 +3,7 @@ const db = require("../models");
 const User = db.user;
 const Role = db.role;
 const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
@@ -64,8 +65,14 @@ exports.findAll = (req, res) => {
     : {};
 
   const { limit, offset } = getPagination(page, size);
-  User.paginate({ is_deleted: false }, { populate: "roles" }, { offset, limit })
-    // .populate("roles")
+
+  const options = {
+    populate: "roles",
+    offset,
+    limit,
+  };
+
+  User.paginate({ is_deleted: false }, options)
     .then((data) => {
       res.send(data);
     })

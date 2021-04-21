@@ -1,11 +1,21 @@
 const Post = require("../models/post.model");
 
+const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
+
+const getPagination = (page, size) => {
+  const limit = size ? +size : 10;
+  const offset = page ? page * limit : 0;
+
+  return { limit, offset };
+};
+
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.title) {
-    res.status(400).send({ message: "Content can not be empty!" });
-    return;
-  }
+  // if (!req.body.title) {
+  //   res.status(400).send({ message: "Content can not be empty!" });
+  //   return;
+  // }
   // Create a Collection
   const post = new Post({
     post_img_url: req.body.post_img_url,
@@ -41,12 +51,19 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-  const name = req.query.name;
+  const { page, size, name } = req.query;
   let condition = name
     ? { name: { $regex: new RegExp(storeLocation), $options: "i" } }
     : {};
 
-  Post.find({ is_deleted: false })
+  const { limit, offset } = getPagination(page, size);
+
+  const options = {
+    offset,
+    limit,
+  };
+
+  Post.paginate({ is_deleted: false }, options)
     .then((data) => {
       res.send(data);
     })

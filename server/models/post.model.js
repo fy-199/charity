@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
@@ -51,5 +52,7 @@ PostSchema.method("toJSON", function () {
   object.id = _id;
   return object;
 });
+
+PostSchema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model("post", PostSchema);
